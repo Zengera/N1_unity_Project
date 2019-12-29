@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;  // 追加しましょう
 
 // 敵の出現を制御するコンポーネント
 public class EnemyManager : MonoBehaviour
@@ -9,6 +10,15 @@ public class EnemyManager : MonoBehaviour
     public float m_interval; // 出現間隔（秒）
 
     private float m_timer; // 出現タイミングを管理するタイマー
+
+    public int m_score; // スコア
+    public Text score_text = null; // Textオブジェクト
+
+    private void Start()
+    {
+        m_score = -1;
+        ScoreDisplay();
+    }
 
     // 毎フレーム呼び出される関数
     private void Update()
@@ -32,5 +42,11 @@ public class EnemyManager : MonoBehaviour
         // 敵のゲームオブジェクトを生成する
         var enemy = Instantiate( enemyPrefab );
 
+    }
+
+    public void ScoreDisplay()
+    {
+        m_score += 1;
+        score_text.text = "Score: " + m_score.ToString();
     }
 }

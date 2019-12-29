@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public int m_hpMax; // HP の最大値
     public int m_hp; // HP
     public Explosion m_explosionPrefab; // 爆発エフェクトのプレハブ
+    public AudioClip m_damageClip; // ダメージを受けた時に再生する SE
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +99,10 @@ public class Player : MonoBehaviour
 
         // HP がまだある場合、ここで処理を終える
         if ( 0 < m_hp ) return;
+
+        // ダメージを受けた時の SE を再生する
+        var audioSource = FindObjectOfType<AudioSource>();
+        audioSource.PlayOneShot( m_damageClip );
 
         // プレイヤーがいた場所に爆発エフェクトを生成する
         Instantiate( 

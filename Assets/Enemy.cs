@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour
     public float m_shotSpeed; // 弾の移動の速さ
     public int m_shotCount; // 弾の発射数ss
 
-    //一秒ごとに弾を発射するためのもの
-    private float targetTime = 1.5f;
+    //一定時間ごとに弾を発射するためのもの
+    private float targetTime = 2.5f;
     private float currentTime = 0;
 
 
@@ -108,6 +108,11 @@ public class Enemy : MonoBehaviour
                 collision.transform.localPosition, 
                 Quaternion.identity );
             
+                GameObject EnemyManager = GameObject.Find("EnemyManager");
+                if (EnemyManager != null){
+                    EnemyManager.SendMessage("ScoreDisplay");
+                }
+
             // 敵を削除する
             Destroy( gameObject );
         }

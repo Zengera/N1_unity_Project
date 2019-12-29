@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemybeam : MonoBehaviour
 {
     private Vector2 m_velocity; // 弾のスピード
+    public int m_damage; // この弾がプレイヤーに与えるダメージ
 
     void OnBecameInvisible() 
     {
@@ -37,6 +38,22 @@ public class Enemybeam : MonoBehaviour
         angles.z += angle;
         transform.localEulerAngles = angles;
 
+    }
+
+    // 他のオブジェクトと衝突した時に呼び出される関数
+    private void OnTriggerEnter2D( Collider2D collision )
+    {
+
+        // プレイヤーと衝突した場合
+        if ( collision.name.Contains( "Player" ) )
+        {
+            // プレイヤーにダメージを与える
+            var player = collision.GetComponent<Player>();
+            player.Damage( m_damage );
+
+            // 弾を削除する
+            Destroy( this.gameObject );
+        }
     }
 
 }

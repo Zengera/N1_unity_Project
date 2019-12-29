@@ -95,11 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f241d4e8604ea409705480e8bda74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_respawnPosInside: {x: 12, y: 5}
-  m_respawnPosOutside: {x: 20, y: -5}
+  m_respawnPosInside: {x: 12, y: 4}
+  m_respawnPosOutside: {x: 20, y: -4}
   m_speed: 0.1
   m_hpMax: 1
-  m_exp: 0
+  m_exp: 1
   m_damage: 1
   m_explosionPrefab: {fileID: 4178143632790111675, guid: 475b3c5d8cd338e468ab6931758fa6c3,
     type: 3}

@@ -56,6 +56,7 @@
      <Compile Include="Assets\Enemybeam.cs" />
      <Compile Include="Assets\EnemyManager.cs" />
      <Compile Include="Assets\Explosion.cs" />
+     <Compile Include="Assets\MainWindow.cs" />
      <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\playerbeam.cs" />
      <Compile Include="Assets\Utils.cs" />

@@ -1301,6 +1301,7 @@ MonoBehaviour:
   m_hp: 1
   m_explosionPrefab: {fileID: 4178143632790111675, guid: 475b3c5d8cd338e468ab6931758fa6c3,
     type: 3}
+  m_damageClip: {fileID: 8300000, guid: e7cb68da88d8b274eb008f9a214589d8, type: 3}
 --- !u!1 &3943249541013685424
 GameObject:
   m_ObjectHideFlags: 0
